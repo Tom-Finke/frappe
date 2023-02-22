@@ -951,6 +951,9 @@ export default class GridRow {
 				horizontal = false;
 			})
 			.on("click", function (event) {
+				if(df.read_only){
+					return
+				}
 				if (frappe.ui.form.editable_row !== me) {
 					var out = me.toggle_editable_row();
 				}
